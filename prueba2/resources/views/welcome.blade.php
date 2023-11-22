@@ -1,140 +1,208 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+            purple: '#BF40BF',
+          }
+        }
+      }
+    }
+  </script>
+   <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+    }
+  </style>
+</head>
+<figure>
+  <div class="lg:content-auto text-4xl text-purple font-bold text-center">
+    Lista de Productos
+  </div>
 
-        <title>Laravel</title>
+  <figure class="md:flex bg-slate-100 rounded-xl p-8 md:p-0 bg-yellow-500">
+    <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
+      <blockquote>
+        <p class="text-lg font-medium text-white">
+        Nombres: Andrea Michelle
+        </p>
+        <p class="text-lg font-medium text-white">
+        Apellidos: Saldaña Cavour
+        </p>
+        <p class="text-lg font-medium text-white">
+        RUT: 19.951.969-7
+        </p>
+        <p class="text-lg font-medium text-white">
+        Asignatura: Introducción al Desarrollo Web/móvil
+        </p>
+        <p class="text-lg font-medium text-white">
+        Fecha: 25/10/2023
+        </p>
+      </blockquote>
+    </div>
+  </figure>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+  <h1 class="text-2xl font-bold text-purple text-center">
+    Productos
+  </h1>
 
-        <!-- Styles -->
-        <style>
-            /* ! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Figtree, sans-serif;font-feature-settings:normal}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]{display:none}*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }::-webkit-backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }.relative{position:relative}.mx-auto{margin-left:auto;margin-right:auto}.mx-6{margin-left:1.5rem;margin-right:1.5rem}.ml-4{margin-left:1rem}.mt-16{margin-top:4rem}.mt-6{margin-top:1.5rem}.mt-4{margin-top:1rem}.-mt-px{margin-top:-1px}.mr-1{margin-right:0.25rem}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.h-16{height:4rem}.h-7{height:1.75rem}.h-6{height:1.5rem}.h-5{height:1.25rem}.min-h-screen{min-height:100vh}.w-auto{width:auto}.w-16{width:4rem}.w-7{width:1.75rem}.w-6{width:1.5rem}.w-5{width:1.25rem}.max-w-7xl{max-width:80rem}.shrink-0{flex-shrink:0}.scale-100{--tw-scale-x:1;--tw-scale-y:1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.items-center{align-items:center}.justify-center{justify-content:center}.gap-6{gap:1.5rem}.gap-4{gap:1rem}.self-center{align-self:center}.rounded-lg{border-radius:0.5rem}.rounded-full{border-radius:9999px}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity))}.bg-red-50{--tw-bg-opacity:1;background-color:rgb(254 242 242 / var(--tw-bg-opacity))}.bg-dots-darker{background-image:url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(0,0,0,0.07)'/%3E%3C/svg%3E")}.from-gray-700\/50{--tw-gradient-from:rgb(55 65 81 / 0.5);--tw-gradient-to:rgb(55 65 81 / 0);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-transparent{--tw-gradient-to:rgb(0 0 0 / 0);--tw-gradient-stops:var(--tw-gradient-from), transparent, var(--tw-gradient-to)}.bg-center{background-position:center}.stroke-red-500{stroke:#ef4444}.stroke-gray-400{stroke:#9ca3af}.p-6{padding:1.5rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.text-center{text-align:center}.text-right{text-align:right}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.font-semibold{font-weight:600}.leading-relaxed{line-height:1.625}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity))}.text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity))}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-gray-500\/20{--tw-shadow-color:rgb(107 114 128 / 0.2);--tw-shadow:var(--tw-shadow-colored)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.selection\:bg-red-500 *::selection{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity))}.selection\:text-white *::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.selection\:bg-red-500::selection{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity))}.selection\:text-white::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.hover\:text-gray-900:hover{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity))}.hover\:text-gray-700:hover{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity))}.focus\:rounded-sm:focus{border-radius:0.125rem}.focus\:outline:focus{outline-style:solid}.focus\:outline-2:focus{outline-width:2px}.focus\:outline-red-500:focus{outline-color:#ef4444}.group:hover .group-hover\:stroke-gray-600{stroke:#4b5563}.z-10{z-index: 10}@media (prefers-reduced-motion: no-preference){.motion-safe\:hover\:scale-\[1\.01\]:hover{--tw-scale-x:1.01;--tw-scale-y:1.01;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}}@media (prefers-color-scheme: dark){.dark\:bg-gray-900{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity))}.dark\:bg-gray-800\/50{background-color:rgb(31 41 55 / 0.5)}.dark\:bg-red-800\/20{background-color:rgb(153 27 27 / 0.2)}.dark\:bg-dots-lighter{background-image:url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(255,255,255,0.07)'/%3E%3C/svg%3E")}.dark\:bg-gradient-to-bl{background-image:linear-gradient(to bottom left, var(--tw-gradient-stops))}.dark\:stroke-gray-600{stroke:#4b5563}.dark\:text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity))}.dark\:text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.dark\:shadow-none{--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.dark\:ring-1{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.dark\:ring-inset{--tw-ring-inset:inset}.dark\:ring-white\/5{--tw-ring-color:rgb(255 255 255 / 0.05)}.dark\:hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.group:hover .dark\:group-hover\:stroke-gray-400{stroke:#9ca3af}}@media (min-width: 640px){.sm\:fixed{position:fixed}.sm\:top-0{top:0px}.sm\:right-0{right:0px}.sm\:ml-0{margin-left:0px}.sm\:flex{display:flex}.sm\:items-center{align-items:center}.sm\:justify-center{justify-content:center}.sm\:justify-between{justify-content:space-between}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}@media (min-width: 1024px){.lg\:gap-8{gap:2rem}.lg\:p-8{padding:2rem}}
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
-            @if (Route::has('login'))
-                <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
-                    @auth
-                        <a href="{{ url('/home') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="max-w-7xl mx-auto p-6 lg:p-8">
-                <div class="flex justify-center">
-                    <svg viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto bg-gray-100 dark:bg-gray-900">
-                        <path d="M61.8548 14.6253C61.8778 14.7102 61.8895 14.7978 61.8897 14.8858V28.5615C61.8898 28.737 61.8434 28.9095 61.7554 29.0614C61.6675 29.2132 61.5409 29.3392 61.3887 29.4265L49.9104 36.0351V49.1337C49.9104 49.4902 49.7209 49.8192 49.4118 49.9987L25.4519 63.7916C25.3971 63.8227 25.3372 63.8427 25.2774 63.8639C25.255 63.8714 25.2338 63.8851 25.2101 63.8913C25.0426 63.9354 24.8666 63.9354 24.6991 63.8913C24.6716 63.8838 24.6467 63.8689 24.6205 63.8589C24.5657 63.8389 24.5084 63.8215 24.456 63.7916L0.501061 49.9987C0.348882 49.9113 0.222437 49.7853 0.134469 49.6334C0.0465019 49.4816 0.000120578 49.3092 0 49.1337L0 8.10652C0 8.01678 0.0124642 7.92953 0.0348998 7.84477C0.0423783 7.8161 0.0598282 7.78993 0.0697995 7.76126C0.0884958 7.70891 0.105946 7.65531 0.133367 7.6067C0.152063 7.5743 0.179485 7.54812 0.20192 7.51821C0.230588 7.47832 0.256763 7.43719 0.290416 7.40229C0.319084 7.37362 0.356476 7.35243 0.388883 7.32751C0.425029 7.29759 0.457436 7.26518 0.498568 7.2415L12.4779 0.345059C12.6296 0.257786 12.8015 0.211853 12.9765 0.211853C13.1515 0.211853 13.3234 0.257786 13.475 0.345059L25.4531 7.2415H25.4556C25.4955 7.26643 25.5292 7.29759 25.5653 7.32626C25.5977 7.35119 25.6339 7.37362 25.6625 7.40104C25.6974 7.43719 25.7224 7.47832 25.7523 7.51821C25.7735 7.54812 25.8021 7.5743 25.8196 7.6067C25.8483 7.65656 25.8645 7.70891 25.8844 7.76126C25.8944 7.78993 25.9118 7.8161 25.9193 7.84602C25.9423 7.93096 25.954 8.01853 25.9542 8.10652V33.7317L35.9355 27.9844V14.8846C35.9355 14.7973 35.948 14.7088 35.9704 14.6253C35.9792 14.5954 35.9954 14.5692 36.0053 14.5405C36.0253 14.4882 36.0427 14.4346 36.0702 14.386C36.0888 14.3536 36.1163 14.3274 36.1375 14.2975C36.1674 14.2576 36.1923 14.2165 36.2272 14.1816C36.2559 14.1529 36.292 14.1317 36.3244 14.1068C36.3618 14.0769 36.3942 14.0445 36.4341 14.0208L48.4147 7.12434C48.5663 7.03694 48.7383 6.99094 48.9133 6.99094C49.0883 6.99094 49.2602 7.03694 49.4118 7.12434L61.3899 14.0208C61.4323 14.0457 61.4647 14.0769 61.5021 14.1055C61.5333 14.1305 61.5694 14.1529 61.5981 14.1803C61.633 14.2165 61.6579 14.2576 61.6878 14.2975C61.7103 14.3274 61.7377 14.3536 61.7551 14.386C61.7838 14.4346 61.8 14.4882 61.8199 14.5405C61.8312 14.5692 61.8474 14.5954 61.8548 14.6253ZM59.893 27.9844V16.6121L55.7013 19.0252L49.9104 22.3593V33.7317L59.8942 27.9844H59.893ZM47.9149 48.5566V37.1768L42.2187 40.4299L25.953 49.7133V61.2003L47.9149 48.5566ZM1.99677 9.83281V48.5566L23.9562 61.199V49.7145L12.4841 43.2219L12.4804 43.2194L12.4754 43.2169C12.4368 43.1945 12.4044 43.1621 12.3682 43.1347C12.3371 43.1097 12.3009 43.0898 12.2735 43.0624L12.271 43.0586C12.2386 43.0275 12.2162 42.9888 12.1887 42.9539C12.1638 42.9203 12.1339 42.8916 12.114 42.8567L12.1127 42.853C12.0903 42.8156 12.0766 42.7707 12.0604 42.7283C12.0442 42.6909 12.023 42.656 12.013 42.6161C12.0005 42.5688 11.998 42.5177 11.9931 42.4691C11.9881 42.4317 11.9781 42.3943 11.9781 42.3569V15.5801L6.18848 12.2446L1.99677 9.83281ZM12.9777 2.36177L2.99764 8.10652L12.9752 13.8513L22.9541 8.10527L12.9752 2.36177H12.9777ZM18.1678 38.2138L23.9574 34.8809V9.83281L19.7657 12.2459L13.9749 15.5801V40.6281L18.1678 38.2138ZM48.9133 9.14105L38.9344 14.8858L48.9133 20.6305L58.8909 14.8846L48.9133 9.14105ZM47.9149 22.3593L42.124 19.0252L37.9323 16.6121V27.9844L43.7219 31.3174L47.9149 33.7317V22.3593ZM24.9533 47.987L39.59 39.631L46.9065 35.4555L36.9352 29.7145L25.4544 36.3242L14.9907 42.3482L24.9533 47.987Z" fill="#FF2D20"/>
-                    </svg>
-                </div>
-
-                <div class="mt-16">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                        <a href="https://laravel.com/docs" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Documentation</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel has wonderful documentation covering every aspect of the framework. Whether you are a newcomer or have prior experience with Laravel, we recommend reading our documentation from beginning to end.
-                                </p>
-                            </div>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
-
-                        <a href="https://laracasts.com" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Laracasts</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                </p>
-                            </div>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
-
-                        <a href="https://laravel-news.com" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Laravel News</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                </p>
-                            </div>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
-
-                        <div class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.115 5.19l.319 1.913A6 6 0 008.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 002.288-4.042 1.087 1.087 0 00-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 01-.98-.314l-.295-.295a1.125 1.125 0 010-1.591l.13-.132a1.125 1.125 0 011.3-.21l.603.302a.809.809 0 001.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 001.528-1.732l.146-.292M6.115 5.19A9 9 0 1017.18 4.64M6.115 5.19A8.965 8.965 0 0112 3c1.929 0 3.716.607 5.18 1.64" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Forge</a>, <a href="https://vapor.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Vapor</a>, <a href="https://nova.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Nova</a>, and <a href="https://envoyer.io" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Telescope</a>, and more.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex justify-center mt-16 px-0 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm text-gray-500 dark:text-gray-400 sm:text-left">
-                        <div class="flex items-center gap-4">
-                            <a href="https://github.com/sponsors/taylorotwell" class="group inline-flex items-center hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="-mt-px mr-1 w-5 h-5 stroke-gray-400 dark:stroke-gray-600 group-hover:stroke-gray-600 dark:group-hover:stroke-gray-400">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-                                </svg>
-                                Sponsor
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="ml-4 text-center text-sm text-gray-500 dark:text-gray-400 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-                    </div>
-                </div>
-            </div>
+  <ul>
+    <li>
+      <figure class="md:flex bg-slate-100 rounded-xl p-8 md:p-0 bg-gray-500">
+        <div class="flex items-center">
+          <img class="w-20 h-20 mr-4" src="https://jumbo.vtexassets.com/arquivos/ids/488610/Shampoo-Pantene-Colageno-300-ml.jpg?v=637916174793500000" alt="imagen">
+          <div>
+            <h2 class="text-lg font-bold">Shampoo</h2>
+            <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl quis bibendum bibendum, nunc elit bibendum sapien, vel bibendum sapien sapien vel sapien.</p>
+            <button class="bg-yellow-500 shadow hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              Ver detalles
+            </button>
+          </div>
         </div>
-    </body>
+      </figure>
+    </li>
+
+    <li>
+      <figure class="md:flex bg-slate-100 rounded-xl p-8 md:p-0 bg-gray-500">
+        <div class="flex items-center">
+          <img class="w-20 h-20 mr-4" src="https://d1tjllbjmslitt.cloudfront.net/spree/products/68367/large_webp/580129-1.webp?1645539780" alt="imagen">
+          <div>
+            <h2 class="text-lg font-bold">Acondicionador</h2>
+            <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl quis bibendum bibendum, nunc elit bibendum sapien, vel bibendum sapien sapien vel sapien.</p>
+            <button class="bg-yellow-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              Ver detalles
+            </button>
+          </div>
+        </div>
+      </figure>
+    </li>
+    <li>
+      <figure class="md:flex bg-slate-100 rounded-xl p-8 md:p-0 bg-gray-500">
+        <div class="flex items-center">
+          <img class="w-20 h-20 mr-4" src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Tualetsapo.jpg" alt="imagen">
+          <div>
+            <h2 class="text-lg font-bold">Jabón</h2>
+            <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl quis bibendum bibendum, nunc elit bibendum sapien, vel bibendum sapien sapien vel sapien.</p>
+            <button class="bg-yellow-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              Ver detalles
+            </button>
+          </div>
+        </div>
+      </figure>
+    </li>
+    <li>
+      <figure class="md:flex bg-slate-100 rounded-xl p-8 md:p-0 bg-gray-500">
+        <div class="flex items-center">
+          <img class="w-20 h-20 mr-4" src="https://d1tjllbjmslitt.cloudfront.net/spree/products/78429/large_webp/4130005-1.webp?1661385316" alt="imagen">
+          <div>
+            <h2 class="text-lg font-bold">Cepillo de Dientes</h2>
+            <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl quis bibendum bibendum, nunc elit bibendum sapien, vel bibendum sapien sapien vel sapien.</p>
+            <button class="bg-yellow-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              Ver detalles
+            </button>
+          </div>
+        </div>
+      </figure>
+    </li>
+    <li>
+      <figure class="md:flex bg-slate-100 rounded-xl p-8 md:p-0 bg-gray-500">
+        <div class="flex items-center">
+          <img class="w-20 h-20 mr-4" src="https://d1tjllbjmslitt.cloudfront.net/spree/products/96813/large_webp/4100568.webp?1691534414" alt="imagen">
+          <div>
+            <h2 class="text-lg font-bold">Toallitas Húmedas</h2>
+            <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl quis bibendum bibendum, nunc elit bibendum sapien, vel bibendum sapien sapien vel sapien.</p>
+            <button class="bg-yellow-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              Ver detalles
+            </button>
+          </div>
+        </div>
+      </figure>
+    </li>
+    <li>
+      <figure class="md:flex bg-slate-100 rounded-xl p-8 md:p-0 bg-gray-500">
+        <div class="flex items-center">
+          <img class="w-20 h-20 mr-4" src="https://dankmarket.cl/cdn/shop/products/Triple-140.jpg?v=1682111788" alt="imagen">
+          <div>
+            <h2 class="text-lg font-bold">Pasta de Dientes</h2>
+            <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl quis bibendum bibendum, nunc elit bibendum sapien, vel bibendum sapien sapien vel sapien.</p>
+            <button class="bg-yellow-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              Ver detalles
+            </button>
+          </div>
+        </div>
+      </figure>
+    </li>
+    <li>
+      <figure class="md:flex bg-slate-100 rounded-xl p-8 md:p-0 bg-gray-500">
+        <div class="flex items-center">
+          <img class="w-20 h-20 mr-4" src="https://mallorca.cl/wp-content/uploads/2021/07/Jgo-Toallas-Grecco-Turquesa-Fdo-Bco.jpg" alt="imagen">
+          <div>
+            <h2 class="text-lg font-bold">Toalla</h2>
+            <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl quis bibendum bibendum, nunc elit bibendum sapien, vel bibendum sapien sapien vel sapien.</p>
+            <button class="bg-yellow-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              Ver detalles
+            </button>
+          </div>
+        </div>
+      </figure>
+    </li>
+      <figure class="md:flex bg-slate-100 rounded-xl p-8 md:p-0 bg-gray-500">
+        <div class="flex items-center">
+          <img class="w-20 h-20 mr-4" src="data:image/jpeg;base64,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" alt="imagen">
+          <div>
+            <h2 class="text-lg font-bold">Confort</h2>
+            <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl quis bibendum bibendum, nunc elit bibendum sapien, vel bibendum sapien sapien vel sapien.</p>
+            <button class="bg-yellow-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              Ver detalles
+            </button>
+          </div>
+        </div>
+      </figure>
+    </li>
+    <li>
+      <figure class="md:flex bg-slate-100 rounded-xl p-8 md:p-0 bg-gray-500">
+        <div class="flex items-center">
+          <img class="w-20 h-20 mr-4" src="https://belcorpchile.vtexassets.com/arquivos/ids/367275-800-800?v=638272902607670000&width=800&height=800&aspect=true" alt="imagen">
+          <div>
+            <h2 class="text-lg font-bold">Perfume</h2>
+            <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl quis bibendum bibendum, nunc elit bibendum sapien, vel bibendum sapien sapien vel sapien.</p>
+            <button class="bg-yellow-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              Ver detalles
+            </button>
+          </div>
+        </div>
+      </figure>
+    </li>
+    <li>
+      <figure class="md:flex bg-slate-100 rounded-xl p-8 md:p-0 bg-gray-500">
+        <div class="flex items-center">
+          <img class="w-20 h-20 mr-4" src="https://www.maicao.cl/on/demandware.static/-/Sites-masterCatalog_Chile/default/dwff7e2cdc/images/large/97186-simonds-cotonitos-200-unidades.jpg" alt="imagen">
+          <div>
+            <h2 class="text-lg font-bold">Cotonitos</h2>
+            <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl quis bibendum bibendum, nunc elit bibendum sapien, vel bibendum sapien sapien vel sapien.</p>
+            <button class="bg-yellow-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              Ver detalles
+            </button>
+          </div>
+        </div>
+      </figure>
+    </li>
+  </ul>
+
+
+
+
+
+
+
+</body>
 </html>
