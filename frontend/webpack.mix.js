@@ -1,21 +1,17 @@
 const mix = require('laravel-mix');
-const path = require('path');
 
+// Compila los archivos de JavaScript
+mix.js('resources/js/main.js', 'public/js');
 
-mix.js('resources/js/main.js', 'public/js/main.js')
-   .vue({ version: 3 })
-   .postCss('resources/css/app.css', 'public/css', [
-       require('postcss-import'),
-       require('tailwindcss'),
+// Compila los archivos CSS con PostCSS y Tailwind
+mix.postCss('resources/css/app.css', 'public/css', [
+    require('postcss-import'),
+    require('tailwindcss'),
+    require('autoprefixer'),
+]);
 
+// Si estás usando versionado de archivos para caché
+if (mix.inProduction()) {
+    mix.version();
+}
 
-   ])
-   .version();
-
-mix.webpackConfig({
-    resolve: {
-      alias: {
-        '@': path.resolve(__dirname, 'src'),
-      },
-    },
-});
